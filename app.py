@@ -3,16 +3,16 @@ from flask import Flask, request, render_template_string
 
 app = Flask(__name__)
 
-# Giao diện HTML cực kỳ cơ bản có ô nhập liệu
+# Extremely basic HTML interface with an input field
 HTML_TEMPLATE = '''
     <h1>CryptoScope MVP - Echo Test</h1>
     <form method="POST">
-        <label>Nhập thử một từ khóa (vd: Bitcoin):</label><br>
+        <label>Enter a keyword (e.g., Bitcoin):</label><br>
         <input type="text" name="user_input" required>
         <button type="submit">Submit!</button>
     </form>
     {% if result %}
-        <h2 style="color: green;">Hệ thống trả lời: Bạn vừa nhập "{{ result }}"</h2>
+        <h2 style="color: green;">System response: You just entered "{{ result }}"</h2>
     {% endif %}
 '''
 
@@ -20,8 +20,8 @@ HTML_TEMPLATE = '''
 def home():
     user_input = None
     if request.method == 'POST':
-        user_input = request.form.get('user_input') # Nhận dữ liệu
-    return render_template_string(HTML_TEMPLATE, result=user_input) # Echo ra màn hình
+        user_input = request.form.get('user_input') # Receive data
+    return render_template_string(HTML_TEMPLATE, result=user_input) # Echo to the screen
 
 if __name__ == '__main__':
     app.run(debug=True)
