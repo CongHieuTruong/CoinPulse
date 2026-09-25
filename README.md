@@ -18,10 +18,10 @@ CoinPulse (or CryptoScope) is a basic web application built with Python and Flas
    cd CoinPulse
    ```
 
-2. **Install Flask:**
-   If you haven't installed Flask yet, run the following command:
+2. **Install dependencies:**
+   Run the following command to install required packages:
    ```bash
-   pip install flask
+   pip install -r requirements.txt
    ```
 
 3. **Run the application:**
